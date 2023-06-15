@@ -1,4 +1,4 @@
-package com.example.crypto.user_controller;
+package com.example.crypto.controllers;
 
 import com.example.crypto.entity.UserEntity;
 import com.example.crypto.service.UserService;

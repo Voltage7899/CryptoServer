@@ -3,12 +3,10 @@ package com.example.crypto.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+
 
 @Data
 @Entity

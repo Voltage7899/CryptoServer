@@ -36,16 +36,13 @@ public class UserService {
     }
 
     public String login(UserEntity user){
-        List<UserEntity> users = userRepository.findAll();
-        UserEntity inUser = users.stream()
-                .filter(x -> x.getEmail().equals(user.getEmail()) && x.getPassword().equals(user.getPassword()))
-                .findAny()
-                .orElse(null);
-        if (inUser != null) return "Вы успешно авторизованы";
-        else return "Пользователь с таким логином & паролем не найден";
+        if(isPresent(user)){
+            UserEntity checked = userRepository.findById(user.getEmail()).get();
+            if (checked.getPassword().equals(user.getPassword())) return "Вы успешно авторизованы";
+            else return "Неверный логин или пароль";
+        }
+        else return "Пользователь с таким логином не найден";
+
     }
-
-
-
 
 }
