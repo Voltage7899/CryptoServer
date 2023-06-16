@@ -1,6 +1,5 @@
 package com.example.crypto;
 
-import com.example.crypto.generators.CryptoPairGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,11 +1,9 @@
 package com.example.crypto.controllers;
 
 import com.example.crypto.generators.CryptoPairGenerator;
+import com.example.crypto.generators.KirilGenerator;
 import com.example.crypto.pojos.CryptoPairModel;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,13 +12,13 @@ import java.util.List;
 public class DataController {
 
     @GetMapping("/all")
-    List<CryptoPairModel> getAllCryptoPair(){
-        return CryptoPairGenerator.generateMultiple();
+    public List<CryptoPairModel> getAllCryptoPair(){
+        return KirilGenerator.generateMultiple();
     }
 
-    @GetMapping("/all/{id}")
-    CryptoPairModel getAllCryptoPair(@PathVariable String id){
-        return CryptoPairGenerator.generateSingle(id);
+    @GetMapping("/all/")
+    public CryptoPairModel getAllCryptoPair(@RequestParam String id){
+        return KirilGenerator.getOne(id);
     }
 
 
